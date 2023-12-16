@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AnnuaireHockey</class>
+ <widget class="QMainWindow" name="AnnuaireHockey">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AnnuaireHockey</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>380</y>
+      <width>90</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>AFFICHAGE</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>80</y>
+      <width>331</width>
+      <height>251</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMENU">
+    <property name="title">
+     <string>MENU</string>
+    </property>
+    <widget class="QMenu" name="menuAjouter_Personne">
+     <property name="title">
+      <string>Ajouter Personne</string>
+     </property>
+     <addaction name="actionJoueur"/>
+     <addaction name="actionEntraineur"/>
+    </widget>
+    <addaction name="menuAjouter_Personne"/>
+    <addaction name="actionSupprime_Personne"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <addaction name="menuMENU"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSupprime_Personne">
+   <property name="text">
+    <string>Supprime Personne</string>
+   </property>
+  </action>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+  <action name="actionJoueur">
+   <property name="text">
+    <string>Joueur</string>
+   </property>
+  </action>
+  <action name="actionEntraineur">
+   <property name="text">
+    <string>Entraineur</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionQuitter</sender>
+   <signal>triggered()</signal>
+   <receiver>AnnuaireHockey</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionJoueur</sender>
+   <signal>triggered()</signal>
+   <receiver>AnnuaireHockey</receiver>
+   <slot>dialogJoueur()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>pressed()</signal>
+   <receiver>AnnuaireHockey</receiver>
+   <slot>afficher()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>214</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEntraineur</sender>
+   <signal>triggered()</signal>
+   <receiver>AnnuaireHockey</receiver>
+   <slot>dialogEnt()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSupprime_Personne</sender>
+   <signal>triggered()</signal>
+   <receiver>AnnuaireHockey</receiver>
+   <slot>SUPP()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>dialogJoueur()</slot>
+  <slot>afficher()</slot>
+  <slot>dialogEnt()</slot>
+  <slot>SUPP()</slot>
+ </slots>
+</ui>
